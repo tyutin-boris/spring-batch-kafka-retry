@@ -1,11 +1,27 @@
 server:
   port: 9090
+
+application:
+  kafka:
+    topic: "demo-topic"
+
 spring:
   jpa:
     show-sql: true
   datasource:
-    url: jdbc:postgresql://localhost:5432/test
+    url: jdbc:postgresql://localhost:5450/test
     username: postgres
     password: postgres
   batch:
     initialize-schema: always
+    job:
+      enabled: true
+  kafka:
+    producer:
+      bootstrap-servers: "localhost:9092"
+      client-id: "demo-producer"
+    consumer:
+      group-id: demo-group
+      bootstrap-servers: "localhost:9092"
+      client-id: "demo-consumer"
+      auto-offset-reset: earliest

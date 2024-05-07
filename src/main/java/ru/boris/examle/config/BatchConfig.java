@@ -31,6 +31,7 @@ public class BatchConfig {
                 .tasklet(tasklet)
                 .repository(jobRepository)
                 .transactionManager(transactionManager)
+                .allowStartIfComplete(true)
                 .build();
     }
 }
