@@ -34,7 +34,7 @@ public class MyConsumerConfig {
         Map<String, Object> consumerProperties = kafkaProperties.buildConsumerProperties();
 
         consumerProperties.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
-        consumerProperties.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, JsonDeserializer.class);
+        consumerProperties.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         consumerProperties.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, 3);
         consumerProperties.put(ConsumerConfig.MAX_POLL_INTERVAL_MS_CONFIG, 3_000);
 

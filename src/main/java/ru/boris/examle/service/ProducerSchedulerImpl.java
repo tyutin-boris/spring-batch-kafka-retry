@@ -34,10 +34,10 @@ public class ProducerSchedulerImpl implements ProducerScheduler {
 
         Stream.of(helloKafka, howAreYou, whatAreYouDoing, bye)
                 .forEach(message -> kafkaTemplate.send(topicName, message)
-                        .addCallback(
-                                result -> log.info("Scheduler send message: " + result),
-                                ex -> log.error("kafka return exception.", ex)
-                        )
+//                        .addCallback(
+//                                result -> log.info("Scheduler send message: " + result),
+//                                ex -> log.error("kafka return exception.", ex)
+//                        )
                 );
     }
 }
